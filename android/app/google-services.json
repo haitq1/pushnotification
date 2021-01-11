@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "661108837985",
+    "project_id": "notirnfb",
+    "storage_bucket": "notirnfb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661108837985:android:e4dbc86762a2a03ee0e420",
+        "android_client_info": {
+          "package_name": "com.notirnfb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661108837985-acmp404ovd9np9q2o5um1ku5td6feufd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.notirnfb",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "661108837985-iljo0g9j88fgg1mhhlc34nll5e0cpr05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaehV5gHoyPMkz2qu10tW7TFFLT8MNoQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661108837985-iljo0g9j88fgg1mhhlc34nll5e0cpr05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
