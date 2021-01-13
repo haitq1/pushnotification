@@ -4,6 +4,7 @@ import {fcmService} from './src/FCMService';
 import {localNotificationService} from './src/LocalNotificationService';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import PushNotification from 'react-native-push-notification';
+import ImportData from './src/lessons/DataWithFireBase/index';
 
 // create a component
 const App = () => {
@@ -49,24 +50,7 @@ const App = () => {
     };
   }, []);
 
-  return (
-    <View style={styles.container}>
-      <Image
-        style={{width: 200, height: 200}}
-        source={{
-          uri:
-            'https://cdn-media-1.freecodecamp.org/images/0*CPTNvq87xG-sUGdx.png',
-        }}
-      />
-      <Button
-        title="Press Cancel"
-        onPress={() => {
-          localNotificationService.cancelAllLocalNotifications();
-        }}
-      />
-      <Button title="Press Push" onPress={pushNoti} />
-    </View>
-  );
+  return <ImportData />;
 };
 
 // define your styles
