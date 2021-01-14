@@ -6,28 +6,32 @@ const reference = database().ref('/users/123');
 const ImportData = () => {
   const [name, setName] = React.useState('');
   const [age, setAge] = React.useState('');
-  const [data, setData] = React.useState('Data Here');
+  const [data, setData] = React.useState();
   const [id, setId] = React.useState(0);
+  const [stop, setStop] = React.useState(false);
+
+  let arr = [];
+  const onRead = () => {
+    database()
+      .ref('/users/123/')
+      .on('value', (snapshot) => {
+        console.log('User data: ', snapshot.val());
+        arr = snapshot.val();
+      });
+  };
+  const onLog = () => {
+    console.log('Array length ', arr.length);
+  };
   const onWrite = () => {
     database()
-      .ref('/users/123/' + id)
+      .ref('/users/123/' + arr.length)
       .set({
-        id: id,
+        id: arr.length,
         name: name,
         age: age,
       })
       .then(() => console.log('Data set.'));
     setName(''), setAge('');
-    setId(id + 1);
-  };
-  const i = 1;
-  const onRead = () => {
-    database()
-      .ref('/users/123/' + i)
-      .on('value', (snapshot) => {
-        console.log('User data: ', snapshot.val().age);
-        // setData(snapshot.val().name);
-      });
   };
   return (
     <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
@@ -44,6 +48,7 @@ const ImportData = () => {
       <Text>Hello how are you</Text>
       <Button title={'Click me to write'} onPress={onWrite} />
       <Button title={'Click me to read'} onPress={onRead} />
+      <Button title={'Click me to log'} onPress={onLog} />
       <Text>{data}</Text>
     </View>
   );
